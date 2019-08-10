@@ -1,3 +1,102 @@
+/*TO DO
+Make mobile responsive
+make pretty
+*/
+
 div{
     border: 1px solid black;
+}
+
+.hidden{
+    display: none;
+}
+
+html{
+    background: url("https://images7.alphacoders.com/792/thumb-1920-792650.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color:darkolivegreen;
+}
+
+header{
+    position: fixed;
+    top:0;
+    left:0;
+    height:10%;
+    min-height:50px;
+    width:100%;
+    background-color:darkgoldenrod;
+}
+
+h2{
+    display:inline;
+    text-align: center;
+    color:darkblue;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+h1{
+    text-align: center;
+    color:darkblue;
+    margin:auto;
+}
+
+footer{
+    position: absolute;
+    bottom:0;
+    left:0;
+    height:10%;
+    min-height:50px;
+    width:100%;
+    background-color:darkgoldenrod;
+    text-align:center;
+}
+
+.section{
+    position: fixed;
+    margin:center;
+    background-color:darkgreen;
+    color:white;
+    top:25%;
+    height:50%;
+    width:50%;
+    left:25%;
+    text-align:center;
+}
+
+.startSection{
+    height: 25%;
+}
+
+.answers{
+    display:inline-block;
+    height:40%;
+    width:40%;
+    border: solid 2px yellow;
+    background-color:red;
+    cursor:pointer;
+    font-size:30px;
+    margin: 10px 10px 5px 5px;
+}
+
+.answers:has(input:checked){
+    background-color:purple;
+}
+
+/*input{
+    opacity:0;
+}*/
+
+button{
+    display:block;
+    position:absolute;
+    background-color:darkorange;
+    color:lightgrey;
+    height:10%;
+    width:20%;
+    bottom:10px;
+    left:40%;
 }

@@ -1,0 +1,11 @@
+Quiz app framework
+
+Main page
+	-header with a title (maybe logo)
+	-body containing main content
+		+initially a start button
+		+clicking start makes a question appear
+			>questions followed by a results screen followed by another question
+			 until all questions are answered
+		+end of quiz shows final results and a button to do the quiz again
+	-footer shows which question the user is on as well as the number of questions gotten right
