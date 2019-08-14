@@ -1,4 +1,4 @@
-let i = 0;
+let i = 9;
 let score = 0;
 
 function pushStart(){
@@ -85,11 +85,12 @@ function createWrongAnswer(){
 function updateScore(){
   console.log("update ran");
   $(".score").text('score:' + score + '/10');
-  $(".count").text('question:' + (i+1));
+  if(i<10){$(".count").text('question:' + (i+1));}
 }
 
 function createEnd(){
   return `<p>This is the end</p>
+    <p>you got ${score} out of 10 right!</p>
     <button class="startOver">start over?</button>`;
 }
 
@@ -127,12 +128,12 @@ function runQuestions(){
     i++;
     });
     $(".question").on("click",".nextQuestion", event =>{
-      updateScore();
       if(i<10){
         console.log(i, " question count");
         renderQuestion(i);
       }
       else{endQuiz();}
+      updateScore();
     });
 }
 
@@ -140,6 +141,7 @@ function endQuiz(){
   $(".question").html(createEnd());
   $(".question").on("click",".startOver", event =>{
     i=score=0;
+    updateScore();
     $(".startSection").removeClass("hidden");
     $(".question").addClass("hidden");
     renderQuestion(i);
