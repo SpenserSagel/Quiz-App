@@ -3,9 +3,6 @@ Make mobile responsive
 make pretty
 */
 
-div{
-    border: 1px solid black;
-}
 
 .hidden{
     display: none;
@@ -18,85 +15,157 @@ html{
     -o-background-size: cover;
     background-size: cover;
     background-color:darkolivegreen;
+    font-family: 'Roboto Slab', serif;
+    overflow-y: auto;
+}
+
+body{
+    overflow:auto;
 }
 
 header{
     position: fixed;
+    display:flex;
+    justify-content:space-around;
     top:0;
     left:0;
     height:10%;
     min-height:50px;
     width:100%;
-    background-color:darkgoldenrod;
+    background-color:rgb(156, 156, 156);
+    opacity:.6;
+}
+
+.score{
+    padding-left:10%;
+}
+
+.count{
+    padding-right:10%;
 }
 
 h2{
-    display:inline;
     text-align: center;
     color:darkblue;
-    margin-left:20px;
-    margin-right:20px;
+    opacity:100%;
 }
 
 h1{
     text-align: center;
     color:darkblue;
     margin:auto;
-}
-
-footer{
-    position: absolute;
-    bottom:0;
-    left:0;
-    height:10%;
-    min-height:50px;
-    width:100%;
-    background-color:darkgoldenrod;
-    text-align:center;
+    opacity:100%;
 }
 
 .section{
     position: fixed;
     margin:center;
-    background-color:darkgreen;
     color:white;
     top:25%;
-    height:50%;
+    height:40%;
+    min-height:350px;
     width:50%;
     left:25%;
     text-align:center;
 }
 
-.startSection{
-    height: 25%;
+fieldset{
+    border:none;
+}
+
+p{
+    margin: 10px 10px 5px 5px;
+    border: solid 1px lightgreen;
+    border-radius: 15px;
+    background-color:forestgreen;
+    background: linear-gradient(90deg, rgba(131,94,0,1) 0%, rgba(9,121,16,1) 31%, rgba(106,199,103,1) 100%);
+    font-size:2vw;
+    box-shadow:25px 5px 25px  black;
 }
 
 .answers{
-    display:inline-block;
-    height:40%;
-    width:40%;
-    border: solid 2px yellow;
-    background-color:red;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    /*height:40%;
+    width:60%;*/
+    border-radius: 15px;
+    background-color: forestgreen;
+    background: linear-gradient(90deg, rgba(131,94,0,1) 0%, rgba(9,121,16,1) 31%, rgba(106,199,103,1) 100%);
     cursor:pointer;
-    font-size:30px;
-    margin: 10px 10px 5px 5px;
+    font-size:2vw;
+    margin: 5px 10px 5px 5px;
+    box-shadow:25px 5px 25px  black;
+}
+
+.answers span{
+    position:relative;
+    bottom:1vw;
 }
 
 .answers:has(input:checked){
     background-color:purple;
 }
 
-/*input{
-    opacity:0;
-}*/
+input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 100%;
+    width: 2vw;
+    height: 2vw;
+    border: 1px solid #ffffff;
+    transition: 0.2s all linear;
+    outline: none;
+    margin-right: 5px;
+    position: relative;
+    top: 1vw;
+}
+
+input:hover{
+    background:rgb(209, 209, 85);
+}
+
+input:checked{
+    background:red;
+}
 
 button{
+    border:none;
+    border-radius: 15px;
     display:block;
-    position:absolute;
-    background-color:darkorange;
+    background-color:#9b1908;
+    background: radial-gradient(circle, rgba(105,73,27,1) 0%, rgba(187,43,14,1) 100%);
     color:lightgrey;
-    height:10%;
-    width:20%;
-    bottom:10px;
-    left:40%;
+    margin:auto;
+    height:30px;
+    width:40%;
+    min-width:115px;
+    box-shadow:25px 5px 25px  black;
+}
+
+img{
+    height:300px;
+    width:550px;
+    margin:auto;
+    margin-top:5px;
+    border-radius: 7px;
+    box-shadow:25px 5px 25px  black;
+}
+
+.rightImg{
+    height:300px;
+    width:500px;
+}
+
+@media screen and (max-width: 1080px){
+    img{
+        display:none;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .title{
+        display:none;
+    }
 }

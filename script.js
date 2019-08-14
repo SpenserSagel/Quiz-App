@@ -11,29 +11,53 @@ function pushStart(){
 
 //TODO: randomize answer order
 //returns an array of answers in random order
-function randomAnswer(i) {}
+function randomAnswer(i) {
+  let answers = [];
+  let isFilled = [false,false,false,false];
+  let j = 0;
+  while(j<4){
+    let rand = Math.floor(Math.random()*4);
+    if(!(isFilled[rand])){
+      if(rand==0){
+        answers.push(QUESTIONS[i].rightAns);
+      }
+      else if(rand==1){
+        answers.push(QUESTIONS[i].ans2);
+      }
+      else if(rand==2){
+        answers.push(QUESTIONS[i].ans3);
+      }
+      else if(rand==3){
+        answers.push(QUESTIONS[i].ans4);
+      }
+      isFilled[rand]=true;
+      j++;
+    }
+  }
+  return answers;
+}
 
 function createQuestion(i){
-
+  answers = randomAnswer(i);
   return `
     <p>${QUESTIONS[i].question}</p>
     <form>
       <fieldset>
         <label class="answers">
-          <input type="radio" name="answers" value=${QUESTIONS[i].rightAns} required>
-          <span>${QUESTIONS[i].rightAns}</span>
+          <input type="radio" name="answers" value='${answers[0]}' required>
+          <span>${answers[0]}</span>
         </label>
         <label class="answers">
-          <input type="radio" name="answers" value=${QUESTIONS[i].ans2} required>
-          <span>${QUESTIONS[i].ans2}</span>
+          <input type="radio" name="answers" value='${answers[1]}' required>
+          <span>${answers[1]}</span>
         </label>
         <label class="answers">
-          <input type="radio" name="answers" value=${QUESTIONS[i].ans3} required>
-          <span>${QUESTIONS[i].ans3}</span>
+          <input type="radio" name="answers" value='${answers[2]}' required>
+          <span>${answers[2]}</span>
         </label>
         <label class="answers">
-          <input type="radio" name="answers" value=${QUESTIONS[i].ans4} required>
-          <span>${QUESTIONS[i].ans4}</span>
+          <input type="radio" name="answers" value='${answers[3]}' required>
+          <span>${answers[3]}</span>
         </label>
         <button type="submit" class = "answerButton">submit</button>
       </fieldset>
@@ -48,12 +72,14 @@ function isRight(ans){
 function createRightAnswer(){
   return `
     <p>You got the answer</p>
-    <button class="nextQuestion">next question</button>`;
+    <button class="nextQuestion">next question</button>
+    <img class="rightImg" src="https://naibuzz.com/wp-content/uploads/2016/10/Rhett-and-Link-Good-Mythical-Morning.jpg" alt="You Right!" />`;
 }
 
 function createWrongAnswer(){
   return `<p>That was the wrong answer.  The right answer was ${QUESTIONS[i].rightAns}</p>
-    <button class="nextQuestion">next question</button>`;
+    <button class="nextQuestion">next question</button>
+    <img class="wrongImg" src="https://newmediarockstars.com/wp-content/uploads/2015/07/Screen-Shot-2015-07-17-at-1.12.52-PM.png" alt="You Wrong!" />`;
 }
 
 function updateScore(){
