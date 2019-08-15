@@ -1,4 +1,4 @@
-let i = 9;
+let i = 0;
 let score = 0;
 
 function pushStart(){
